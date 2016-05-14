@@ -185,14 +185,7 @@
                         TargetDistance = me.Position.Distance2D(target);
 
                         Orbwalking.Orbwalk(target, Game.Ping, attackmodifiers: true);
-                        if (strafe != null && strafe.IsValid && strafe.CanBeCasted() && me.CanCast() && me.Distance2D(target) <= attackRange + 90 &&
-                            Utils.SleepCheck("strafe"))
-
-                        {
-                            strafe.UseAbility();
-                            Utils.Sleep(50 + Game.Ping, "strafe");
-                        }
-
+                       
                         if (creepR.Count > 0 && !me.Modifiers.ToList().Exists(x => x.Name == "modifier_clinkz_death_pact") && Menu.Item("enableult").GetValue<bool>())
                         {
                             var creepmax = creepR.MaxOrDefault(x => x.Health);
